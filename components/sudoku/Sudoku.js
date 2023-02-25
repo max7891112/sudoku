@@ -16,23 +16,21 @@ class Sudoku {
     }
 
     addBaseField() {
-        // let trs = document.querySelectorAll('tr');
-        // let tds = document.querySelectorAll('td');
-        // let set = new Set(1,2,3,4,5,6,7,8,9)
-        // for(let i = 0; i < 9; i++) {
-        //     let randomNum = TechnicalFunc.random(1,9)
-        //     // console.log(randomNum)
-        //     for(let elem of set) {
-        //         if(randomNum == elem) {
-        //             tds[i].firstElementChild.textContent = randomNum
-        //             map.delete(randomNum)
-        //         } else {
-        //             // continue
-        //         };  
-        //     };
-        // };
+        let trs = document.querySelectorAll('tr');
+        let tds = document.querySelectorAll('td');
+        let set = new Set()
+        for(let i = 0; i <= 8; i++) {
+            set.add(i)
+        }
+        for(let i = 0; i <= 8; i++) {
+            let random = Math.floor(Math.random() * set.size);
+            tds[i].firstElementChild.textContent = random
+            if(set.has(random)) {
+                console.log(random)
+                set.delete(random);
+            }
+        }
     };
 };
 
 export default new Sudoku()
-// tds[i].firstElementChild.textContent = TechnicalFunc.random(1,9)

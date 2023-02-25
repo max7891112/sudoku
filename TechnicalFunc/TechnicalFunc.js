@@ -1,8 +1,7 @@
 class TechnicalFunc {
-    random(min,max) {
-        let rand =  (((min - 0.5) + Math.random() * (max - min + 0.5)).toFixed())
-        return Math.round(rand)    
-    }
+    random(array) {
+            return Math.floor((Math.random()*array.length))
+    }     
 }
 
 export default new TechnicalFunc()
