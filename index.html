@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.scss">
+    <link rel="icon" href="./img/sudoku.png">
+    <title>Sudoku</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sudoku">
+            <div class="sudoku__header">
+                <div class="sudoku__level">
+                    <a>level:</a>
+                    <a class="sudoku__level-link">Easy</a>
+                    <a class="sudoku__level-link">Medium</a>
+                    <a class="sudoku__level-link">Hard</a>
+                </div>
+                <div class="sudoku__error">Error: 0/3</div>
+                <div class="sudoku__timer">
+                    <span class="sudoku__time">00:00</span>
+                    <div class="sudoku__timer-play">
+                        <img src="./components/sudoku/img/play.png" alt="play">
+                    </div>
+                    <div class="sudoku__timer-pause _hidden">
+                        <img src="./components/sudoku/img/pause.png" alt="pause">
+                    </div>
+                </div>
+            </div>
+            <div class="sudoku__game">
+                <div class="sudoku__field"></div>
+                <div class="sudoku__additional-elements">
+                    <div class="sudoku__numpad">
+                        <div class="sudoku__numpad-item">1</div>
+                        <div class="sudoku__numpad-item">2</div>
+                        <div class="sudoku__numpad-item">3</div>
+                        <div class="sudoku__numpad-item">4</div>
+                        <div class="sudoku__numpad-item">5</div>
+                        <div class="sudoku__numpad-item">6</div>
+                        <div class="sudoku__numpad-item">7</div>
+                        <div class="sudoku__numpad-item">8</div>
+                        <div class="sudoku__numpad-item">9</div>
+                    </div>
+                    <div class="sudoku__new-game">
+                        <button class="sudoku__button">New game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
