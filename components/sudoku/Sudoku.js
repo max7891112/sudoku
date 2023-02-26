@@ -30,43 +30,118 @@ class Sudoku {
         let arrColumnNine = [];
 
         let arr = [1,2,3,4,5,6,7,8,9];
-        // for(let i = 0; i <= 8; i++) {
-        //     let randomNum = TechnicalFunc.random(arr.length - 1);
-        //     tds[i].firstElementChild.textContent = arr[randomNum];
-        //     console.log(arr);
-        //     console.log(arr[randomNum])
-        //     arr.splice(arr.indexOf(arr[randomNum]), 1);
-        // };
-
-        // for(let i = 1; i < 28; i++) {
-        //     currentNum++;
-        //     let randomNum = TechnicalFunc.random(arr.length - 1);
-        //     tds[currentNum - 1].firstElementChild.textContent = arr[randomNum];
-        //     arr.splice(arr.indexOf(arr[randomNum]), 1);
-        //     if(currentNum%3 == 0) currentNum += 6;
-        //     if(arr.length == 0) arr = [1,2,3,4,5,6,7,8,9];
-        // }
 
         function fillField (currentNumFunc) {
             let currentNum = currentNumFunc;
             for(let i = 1; i < 28; i++) {
                 currentNum++;
-                let randomNum = TechnicalFunc.random(arr.length - 1);
+                let randomNum = getRandomNum();
+
+                function getRandomNum () {
+                    let randomNum = TechnicalFunc.random(arr.length - 1);
+                    
+
+                    if(currentNum%9 == 1 ) {
+                        if (arrColumnOne.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 1,
+                        //     arr: ${arrColumnOne},
+                        //     randomNum: ${randomNum},
+                        // `);
+                    };
+                    if(currentNum%9 == 2 )  {
+                        if (arrColumnTwo.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 2,
+                        //     arr: ${arrColumnThree},
+                        //     currentNum: ${randomNum},
+                        // `);
+                    };
+                    if(currentNum%9 == 3 )  {
+                        if (arrColumnThree.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 3,
+                        //     arr: ${arrColumnThree},
+                        //     currentNum: ${randomNum},
+                        // `);
+                    };
+                    if(currentNum%9 == 4 )  {
+                        if (arrColumnFour.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 4,
+                        //     arr: ${arrColumnFour},
+                        //     currentNum: ${randomNum},
+                        // `);
+                    };
+                    if(currentNum%9 == 5 )  {
+                        if (arrColumnFive.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 5,
+                        //     arr: ${arrColumnFive},
+                        //     currentNum: ${randomNum},
+                        // `);
+                    };
+                    if(currentNum%9 == 6 )  {
+                        if (arrColumnSix.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 6,
+                        //     arr: ${arrColumnSix},
+                        //     currentNum: ${randomNum},
+                        // `);
+                    };
+                    if(currentNum%9 == 7 )  {
+                        if (arrColumnSeven.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 7,
+                        //     arr: ${arrColumnSeven},
+                        //     currentNum: ${randomNum},
+                        // `);
+                    };
+                    if(currentNum%9 == 8 )  {
+                        // if (arrColumnEight.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 8,
+                        //     arr: ${arrColumnEight},
+                        //     currentNum: ${randomNum},
+                        // `);
+                    };
+                    if(currentNum%9 == 0 )  {
+                        if (arrColumnNine.includes(arr[randomNum])) return getRandomNum();
+                        // console.log(`
+                        //     numberStr: 9,
+                        //     arr: ${arrColumnNine},
+                        //     currentNum: ${randomNum},
+                        // `);
+                    };
+                    
+                    return randomNum;
+                };
+
+                console.log(randomNum);
+                console.log('ПРОВЕРКА')
+
+                if(currentNum%9 == 1 )  arrColumnOne.push(arr[randomNum]);
+                if(currentNum%9 == 2 )  arrColumnTwo.push(arr[randomNum]);
+                if(currentNum%9 == 3 )  arrColumnThree.push(arr[randomNum]);
+                if(currentNum%9 == 4 )  arrColumnFour.push(arr[randomNum]);
+                if(currentNum%9 == 5 )  arrColumnFive.push(arr[randomNum]);
+                if(currentNum%9 == 6 )  arrColumnSix.push(arr[randomNum]);
+                if(currentNum%9 == 7 )  arrColumnSeven.push(arr[randomNum]);
+                if(currentNum%9 == 8 )  arrColumnEight.push(arr[randomNum]);
+                if(currentNum%9 == 0 )  arrColumnNine.push(arr[randomNum]);
+
                 tds[currentNum - 1].firstElementChild.textContent = arr[randomNum];
+
                 arr.splice(arr.indexOf(arr[randomNum]), 1);
                 if(currentNum%3 == 0) currentNum += 6;
                 if(arr.length == 0) arr = [1,2,3,4,5,6,7,8,9];
+
             };
         };
         fillField(0);
         fillField(3);
         fillField(6);
-        // let currentNum = 0;
-        // for(let i = 1; i < 28; i++) {
-        //     currentNum++;
-        //     console.log(currentNum);
-        //     if(currentNum%3 == 0) currentNum += 6;
-        // }
+    
     };
 };
 
