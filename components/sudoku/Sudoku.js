@@ -17,6 +17,7 @@ class Sudoku {
 
     addBaseField() {
         let tds = document.querySelectorAll('td');
+        console.log(tds);
 
         let arr = [1,2,3,4,5,6,7,8,9]
         for(let i = 0; i <= 8; i++) {
@@ -26,8 +27,19 @@ class Sudoku {
             console.log(arr[randomNum])
             arr.splice(arr.indexOf(arr[randomNum]), 1);
         };
+
+        let currentNum = 0;
+        let arrColumnOne = [];
+        let arrColumnTwo = [];
+        let arrColumnThree = [];
+
+        for(let i = 1; i < 28; i++) {
+            currentNum++;
+            console.log(currentNum);
+            if(currentNum%3 == 0) currentNum += 6;
+        }
     };
 };
 
-export default new Sudoku()
+export default new Sudoku();
 // tds[i].firstElementChild.textContent = TechnicalFunc.random(1,9)
