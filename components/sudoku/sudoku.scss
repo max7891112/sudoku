@@ -63,6 +63,7 @@
 		}
 
 		&__field {
+			position: relative;
 			table{
 				border-collapse: collapse;
 				border: 2px solid black;
@@ -153,4 +154,24 @@
 
 .active{
 	color: #0257ad;
+}
+
+._pause{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: white;
+	z-index: 150;
+	width: 100%;
+	height: 97%;
+	cursor: pointer;
+	&::after{
+		content: '';
+		position: absolute;
+		top: 37%;
+		left: 42%;
+		background-image: url(~/components/sudoku/img/pause-play.png);
+		width: 64px;
+		height: 64px;
+	}
 }

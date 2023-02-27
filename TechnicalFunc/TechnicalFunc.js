@@ -4,17 +4,14 @@ import InputNumber from "../components/InputNumber/InputNumber";
 class TechnicalFunc {
 
     constructor() {
-        this.timerId = ''
+        this.timerId = '1';
+        this.flag = true;
+        this.stopTimer = false
     }
 
     random(max) {
         let min = 0;
         let rand =  (((min - 0.5) + Math.random() * (max - min + 1)));
-        // console.log(`
-        // min: 0;
-        // max: ${max};
-        // value: ${Math.round(rand)};
-        // `)
         return Math.round(rand);    
     }
 
@@ -50,6 +47,7 @@ class TechnicalFunc {
         let counterForSeconds = 0;
         let counterForMinutes = 0
         this.timerId = setInterval(() => {
+            if(this.stopTimer) return
             if(counterForSeconds < 10) {
                 let time = '0' + counterForSeconds
                 seconds.textContent = time
@@ -69,6 +67,28 @@ class TechnicalFunc {
                 counterForSeconds = 0
             }
         },1000)
+    }
+
+    pause() {
+        let pause = document.getElementById('pause');
+        let play = document.getElementById('play');
+        let field = document.querySelector('.sudoku__field')
+        let listenerForPlay = ''
+        pause.addEventListener('click', () => {
+            pause.classList.add('_hidden');
+            play.classList.remove('_hidden');
+            this.stopTimer = true
+            let pauseBlock = document.createElement('div')
+            pauseBlock.classList.add('_pause')
+            field.append(pauseBlock)
+            pauseBlock.addEventListener('click', listenerForPlay)
+        })
+        play.addEventListener('click', listenerForPlay = () => {
+            play.classList.add('_hidden');
+            pause.classList.remove('_hidden');
+            this.stopTimer = false
+            field.removeChild(field.lastElementChild)
+        });
     }
 }
 

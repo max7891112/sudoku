@@ -1,7 +1,6 @@
 import RenderGameField from './components/sudoku/renderGameField.js';
 import Sudoku from './components/sudoku/Sudoku.js';
 import InputNumber from './components/InputNumber/InputNumber.js';
-import Pause from './components/pause/Pause.js';
 RenderGameField.renderGameField(9,9,'.sudoku__field');
 Sudoku.addMarkup();
 Sudoku.addBaseField();
@@ -10,5 +9,4 @@ InputNumber.listenerForTd();
 InputNumber.listenerForNumpad();
 InputNumber.listenerForLevelButtons();
 InputNumber.listenerForNewGame();
-Pause.addListenerForPause()
 

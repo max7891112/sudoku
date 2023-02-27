@@ -45,7 +45,7 @@ class InputNumber{
             target.classList.add('clicked');
             //
             // добавить подсветку для вертикальных, горизонтальных линий и квадратов
-            // добавить передвижение клавишами
+            // добавить передвижение клавишами и ввод цифр клавишами
         })
     }
 
@@ -57,6 +57,7 @@ class InputNumber{
                 let target = document.querySelector('.clicked')
                 if(numpads[0].parentNode.getAttribute('data-playing') == 'false') {
                     TechnicalFunc.addTimer()
+                    TechnicalFunc.pause()
                     numpads[0].parentNode.setAttribute('data-playing', 'true')
                 }
                 if(target) {
