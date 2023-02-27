@@ -17,17 +17,19 @@ class Sudoku {
 
     addBaseField() {
         let tds = document.querySelectorAll('td');
-
-        let arr = [1,2,3,4,5,6,7,8,9]
-        for(let i = 0; i <= 8; i++) {
-            let randomNum = TechnicalFunc.random(arr.length - 1);
-            tds[i].firstElementChild.textContent = arr[randomNum];
-            console.log(arr);
-            console.log(arr[randomNum])
-            arr.splice(arr.indexOf(arr[randomNum]), 1);
-        };
+        function firstRow() {
+            let arr = [1,2,3,4,5,6,7,8,9]
+            for(let i = 0; i <= 81; i++) {
+                let randomNum = TechnicalFunc.random(arr.length - 1);
+                if(tds[i]) {
+                    tds[i].firstElementChild.textContent = arr[randomNum];
+                }
+                
+                // arr.splice(randomNum, 1);
+            };  
+        }
+        firstRow()
     };
 };
 
 export default new Sudoku()
-// tds[i].firstElementChild.textContent = TechnicalFunc.random(1,9)

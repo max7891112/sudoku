@@ -13,18 +13,18 @@
         <div class="sudoku">
             <div class="sudoku__header">
                 <div class="sudoku__level">
-                    <a>level:</a>
-                    <a class="sudoku__level-link">Easy</a>
-                    <a class="sudoku__level-link">Medium</a>
-                    <a class="sudoku__level-link">Hard</a>
+                    <span>Level:</span>
+                    <button class="sudoku__level-button active" id="levelEasy">Easy</button>
+                    <button class="sudoku__level-button" id="levelMedium">Medium</button>
+                    <button class="sudoku__level-button" id="levelHard">Hard</button>
                 </div>
-                <div class="sudoku__error">Error: 0/3</div>
+                <div class="sudoku__error"><span>Error:</span> <span id="NumError">0</span>/3</div>
                 <div class="sudoku__timer">
-                    <span class="sudoku__time">00:00</span>
-                    <div class="sudoku__timer-play">
+                    <span class="sudoku__time"><span id="minutes">00</span>:<span id="seconds">00</span></span>
+                    <div class="sudoku__timer-play _hidden" id="play">
                         <img src="./components/sudoku/img/play.png" alt="play">
                     </div>
-                    <div class="sudoku__timer-pause _hidden">
+                    <div class="sudoku__timer-pause" id="pause">
                         <img src="./components/sudoku/img/pause.png" alt="pause">
                     </div>
                 </div>
@@ -32,18 +32,16 @@
             <div class="sudoku__game">
                 <div class="sudoku__field"></div>
                 <div class="sudoku__additional-elements">
-                    <div class="sudoku__numpad">
-                        <div class="sudoku__numpad-item">1</div>
-                        <div class="sudoku__numpad-item">2</div>
-                        <div class="sudoku__numpad-item">3</div>
-                        <div class="sudoku__numpad-item">4</div>
-                        <div class="sudoku__numpad-item">5</div>
-                        <div class="sudoku__numpad-item">6</div>
-                        <div class="sudoku__numpad-item">7</div>
-                        <div class="sudoku__numpad-item">8</div>
-                        <div class="sudoku__numpad-item">9</div>
-                    </div>
-                    <div class="sudoku__new-game">
+                    <div class="sudoku__numpad" data-playing="false">
+                        <div class="sudoku__numpad-item"><span>1</span></div>
+                        <div class="sudoku__numpad-item"><span>2</span></div>
+                        <div class="sudoku__numpad-item"><span>3</span></div>
+                        <div class="sudoku__numpad-item"><span>4</span></div>
+                        <div class="sudoku__numpad-item"><span>5</span></div>
+                        <div class="sudoku__numpad-item"><span>6</span></div>
+                        <div class="sudoku__numpad-item"><span>7</span></div>
+                        <div class="sudoku__numpad-item"><span>8</span></div>
+                        <div class="sudoku__numpad-item"><span>9</span></div>
                         <button class="sudoku__button">New game</button>
                     </div>
                 </div>
