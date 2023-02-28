@@ -30,15 +30,17 @@ class TechnicalFunc {
     }
 
     gameRestart(level) {
-        let field = document.querySelector('.sudoku__field')
+        // let field = document.querySelector('.sudoku__field')
         clearInterval(this.timerId)
         NumError.textContent = '0'; // обнуление счетчика ошибок
         minutes.textContent = '00' // обнуление счетчика минут
         seconds.textContent = '00' // обнуление счетчика секунд
-        field.innerHTML = '' // удаление всего поля
-        RenderGameField.renderGameField(9,9,'.sudoku__field'); // рендер поля
-        Sudoku.addMarkup(); // рендер разметки
-        Sudoku.addBaseField(); // создание поля
+        // field.innerHTML = '' // удаление всего поля
+        Sudoku.createFullGameField(); // рендер поля
+        for(let elem of document.querySelectorAll('.illumination')) {
+            elem.classList.remove('illumination')
+        }
+        // Sudoku.addMarkup(); // рендер разметки
         InputNumber.gameLevel(level); // установка прошлого уровня для игрока 
         document.querySelector('.sudoku__numpad').setAttribute('data-playing', 'false') // подготовка numpad к следующей игре
     }
@@ -69,7 +71,7 @@ class TechnicalFunc {
         },1000)
     }
 
-    pause() {
+    pause(element, listenerForNumpad) {
         let pause = document.getElementById('pause');
         let play = document.getElementById('play');
         let field = document.querySelector('.sudoku__field')
