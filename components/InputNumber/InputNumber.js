@@ -33,18 +33,50 @@ class InputNumber{
     } 
 
     listenerForTd() {
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', (event) => {
             let target = event.target.closest('.hidden-element')
             if(!target) return
             let hiddenElems = document.querySelectorAll('.hidden-element')
-            for(let elem of hiddenElems) {
-                if(elem.classList.contains('clicked')) {
-                    elem.classList.remove('clicked');
+            let tr = target.parentNode.parentNode.parentNode.childNodes
+            let tds = document.querySelectorAll('td')
+            let targetIndex = ''
+            for(let hiddenElem of hiddenElems) {
+                if(hiddenElem.classList.contains('clicked')) {
+                    hiddenElem.classList.remove('clicked');
+                }
+                if(hiddenElem.classList.contains('illumination')) {
+                    hiddenElem.classList.remove('illumination')
+                    hiddenElem.parentNode.parentNode.classList.remove('illumination')
                 }
             }
             target.classList.add('clicked');
-            //
-            // добавить подсветку для вертикальных, горизонтальных линий и квадратов
+            for(let i = 0; i < tds.length; i++) {  // перебор td для убирания класса
+                if(tds[i].firstElementChild.firstElementChild == target) {
+                    targetIndex = i
+                }
+                if(tds[i].classList.contains('illumination')) {
+                    tds[i].classList.remove('illumination')
+                }
+            }
+            while( targetIndex >= 9) {
+                targetIndex = targetIndex - 9
+            }
+            
+            for(let i = targetIndex; i < tds.length; i = i + 9) {
+                console.log(i)
+                tds[i].classList.add('illumination')
+                if(tds[i].firstElementChild.firstElementChild && tds[i].firstElementChild.firstElementChild != target) {
+                    tds[i].firstElementChild.firstElementChild.classList.add('illumination')
+                }
+            }
+            for(let td of tr) {
+                td.classList.add('illumination')   
+                if(td.firstElementChild.firstElementChild && td.firstElementChild.firstElementChild != target) {
+                    td.firstElementChild.firstElementChild.classList.add('illumination')
+                }
+            }
+            
+            // добавить подсветку для квадратов
             // добавить передвижение клавишами и ввод цифр клавишами
         })
     }
