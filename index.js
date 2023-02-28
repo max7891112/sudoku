@@ -10,3 +10,5 @@ InputNumber.listenerForNumpad();
 InputNumber.listenerForLevelButtons();
 InputNumber.listenerForNewGame();
 
+// Sudoku.addMarkup();
+Sudoku.createFullGameField();
