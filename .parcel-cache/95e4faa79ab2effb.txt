@@ -63,7 +63,7 @@
 93C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\es-abstract\2021\BigInt\multiply.js133217762878163250 0
 80C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\tweetnacl\CHANGELOG.md133217762840998204 0
 77C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\lodash\fp\zipAll.js133217762881544013 0
-49C:\Users\bekri\Desktop\my_work\sudoku-master\dist133218597763648023 1
+49C:\Users\bekri\Desktop\my_work\sudoku-master\dist133220559220775654 1
 87C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\deasync\bin\win32-x64-node-13133217762863539955 1
 72C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\rgb-regex\test133217762835598222 1
 129C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\parcel-bundler\node_modules\purgecss\node_modules\postcss\lib\vendor.js133217763307689885 0
@@ -124,7 +124,7 @@
 59C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\q133217762833507750 1
 96C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\postcss-selector-parser\dist\parser.js133217762843888853 0
 81C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\postcss-selector-parser133217762850300316 1
-53C:\Users\bekri\Desktop\my_work\sudoku-master\index.js133217812986114098 0
+53C:\Users\bekri\Desktop\my_work\sudoku-master\index.js133220557822537542 0
 61C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\ret133217762825490159 1
 76C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\core-js\es7\set.js133217762885851738 0
 81C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\unbox-primitive\LICENSE133217762827010486 0
@@ -3681,7 +3681,7 @@
 82C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\w3c-hr-time\package.json133217762830501283 0
 79C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\hmac-drbg\.travis.yml133217762827320547 0
 87C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\regenerator-transform\LICENSE133217762819430182 0
-71C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.3d214d75.js.map133218597763648023 0
+71C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.3d214d75.js.map133220559220765635 0
 92C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\stylehacks\src\plugins\starHtml.js133217763309675994 0
 78C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\bcrypt-pbkdf\LICENSE133217762824049810 0
 122C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\parcel-bundler\node_modules\postcss-merge-longhand\dist\index.js133217763303162091 0
@@ -9611,7 +9611,7 @@
 125C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\parcel-bundler\node_modules\htmlnano\node_modules\terser\bin\terser133217762844008873 0
 93C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\core-js\library\fn\object\values.js133217762888062250 0
 100C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\parcel-bundler\src\builtins\.eslintrc.json133217762863289891 0
-60C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.html133218585369417392 0
+60C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.html133220557740537733 0
 82C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\minimist\test\unknown.js133217762843508764 0
 102C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\parcel-bundler\src\builtins\bundle-loader.js133217762863339902 0
 96C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\parcel-bundler\src\builtins\helpers.js133217762863429921 0
@@ -16836,7 +16836,7 @@
 89C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\css-select-base-adapter\LICENSE133217762827050489 0
 98C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\@babel\runtime\helpers\defineProperty.js133217762852520797 0
 94C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\css-select-base-adapter\package.json133217762819027275 0
-72C:\Users\bekri\Desktop\my_work\sudoku-master\components\sudoku\Sudoku.js133218597763217646 0
+72C:\Users\bekri\Desktop\my_work\sudoku-master\components\sudoku\Sudoku.js133220559220055140 0
 91C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\css-select-base-adapter\readme.md133217762829771106 0
 118C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\@babel\helper-define-polyfill-provider\lib\visitors\index.js133217762844909090 0
 72C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\css-select\lib133217762850510347 1
@@ -19570,7 +19570,7 @@
 96C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\@parcel\packager-js\src\dev-prelude.js133217762840608117 0
 96C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\@parcel\packager-js\src\DevPackager.js133217762841798399 0
 100C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\@parcel\packager-js\src\ESMOutputFormat.js133217762842888627 0
-68C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.ac93e151.css133218596801278050 0
+68C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.ac93e151.css133220557740347674 0
 103C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\@parcel\packager-js\src\GlobalOutputFormat.js133217762843638830 0
 92C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\@parcel\core\lib\Transformation.js133217762863870020 0
 92C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\@parcel\packager-js\src\helpers.js133217762844689035 0
@@ -21080,10 +21080,10 @@
 71C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\.bin\uuid.cmd133217762932110686 0
 71C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\.bin\uuid.ps1133217762932110686 0
 72C:\Users\bekri\Desktop\my_work\sudoku-master\node_modules\.bin\which.cmd133217762932100679 0
-67C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.3d214d75.js133218597763607990 0
-72C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.ac93e151.css.map133218596801328069 0
-68C:\Users\bekri\Desktop\my_work\sudoku-master\dist\pause.f61e0fbf.png133218596801078015 0
-67C:\Users\bekri\Desktop\my_work\sudoku-master\dist\play.3dfd1806.png133218596801268048 0
+67C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.3d214d75.js133220559220735644 0
+72C:\Users\bekri\Desktop\my_work\sudoku-master\dist\index.ac93e151.css.map133220557740367694 0
+68C:\Users\bekri\Desktop\my_work\sudoku-master\dist\pause.f61e0fbf.png133220557739597496 0
+67C:\Users\bekri\Desktop\my_work\sudoku-master\dist\play.3dfd1806.png133220557739917591 0
 65C:\Users\bekri\Desktop\my_work\sudoku-master\constants\_null.scss133217753520000000 0
 65C:\Users\bekri\Desktop\my_work\sudoku-master\constants\_root.scss133217753520000000 0
 62C:\Users\bekri\Desktop\my_work\sudoku-master\components\sudoku133218541682551669 1
