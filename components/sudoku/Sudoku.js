@@ -152,6 +152,8 @@ class Sudoku {
         fillField(0);
         fillField(3);
         fillField(6);
+
+        this.deletePreloader();
     
     };
 
@@ -163,21 +165,18 @@ class Sudoku {
     };
 
     createFullGameField () {
-        try {
-            this.addBaseField();
-        } catch {
-            this.clearField();
-            this.createFullGameField();
-        };
+        setTimeout(() => {
+            try {
+                this.addBaseField();
+            } catch {
+                this.clearField();
+                this.createFullGameField();
+            };
+        }, 0);
     };
 
-    createPreloader () {
-        let field = document.querySelector('.sudoku__field');
-        let preloader = `
-        
-        `;
-
-        console.log(field);
+    deletePreloader() {
+        document.querySelector('.preloader').classList.add('preloader__not-active');
     }
 };
 
