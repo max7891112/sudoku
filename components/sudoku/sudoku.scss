@@ -84,3 +84,19 @@
 		&__button {
 		}
 }
+
+//preloader
+
+.preloader {
+	width: 361.6px;
+	height: 361.6px;
+	background-color: #f3f3f3;
+
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__img {
+	}
+}

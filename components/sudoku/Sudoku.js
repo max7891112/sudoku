@@ -115,7 +115,7 @@ class Sudoku {
                         `);
                     };
 
-                    if( currentNum >= 1 && currentNum <= 9 && trs[0].textContent.includes(`${arr[randomNum]}`) ) return getRandomNum();
+                    if( currentNum >= 1 && currentNum  <=  9 && trs[0].textContent.includes(`${arr[randomNum]}`) ) return getRandomNum();
                     if( currentNum >= 10 && currentNum <= 18 && trs[1].textContent.includes(`${arr[randomNum]}`) ) return getRandomNum();
                     if( currentNum >= 19 && currentNum <= 27 && trs[2].textContent.includes(`${arr[randomNum]}`) ) return getRandomNum();
                     if( currentNum >= 28 && currentNum <= 36 && trs[3].textContent.includes(`${arr[randomNum]}`) ) return getRandomNum();
@@ -170,6 +170,15 @@ class Sudoku {
             this.createFullGameField();
         };
     };
+
+    createPreloader () {
+        let field = document.querySelector('.sudoku__field');
+        let preloader = `
+        
+        `;
+
+        console.log(field);
+    }
 };
 
 export default new Sudoku();
