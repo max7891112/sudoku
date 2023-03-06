@@ -254,7 +254,7 @@ class InputNumber{
                 this.checkNumber(5)
             }
             if(event.code == 'Digit6' || event.code == 'Numpad6') {
-                this.checkNumber(1)
+                this.checkNumber(6)
             }
             if(event.code == 'Digit7' || event.code == 'Numpad7') {
                 this.checkNumber(7)
