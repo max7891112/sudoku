@@ -5,7 +5,7 @@ class InputNumber{
 
     constructor() {
         this.numpads = document.querySelectorAll('.sudoku__numpad-item');
-        this.scriptListener = ''
+        this.scriptListener = '';
     }
 
     fillRandomEmptyCell(value) {
@@ -297,7 +297,11 @@ class InputNumber{
         let medium = document.getElementById('levelMedium');
         let hard = document.getElementById('levelHard');
         let buttons = document.querySelectorAll('.sudoku__level-button');
-        easy.addEventListener('click', function() {
+        let tds = document.querySelectorAll('td')
+        easy.addEventListener('click', () => {
+            for(let elem of tds) {
+                elem.classList.remove('illumination')
+            }
             let answer = confirm('the progress of the current game will be lost');
             if(answer) {
                 for(let button of buttons) {
@@ -314,6 +318,9 @@ class InputNumber{
         })
 
         medium.addEventListener('click', function() {
+            for(let elem of tds) {
+                elem.classList.remove('illumination')
+            }
             let answer = confirm('the progress of the current game will be lost');
             if(answer) {
                 for(let button of buttons) {
@@ -330,6 +337,9 @@ class InputNumber{
         })
 
         hard.addEventListener('click', function() {
+            for(let elem of tds) {
+                elem.classList.remove('illumination')
+            }
             let answer = confirm('the progress of the current game will be lost');
             if(answer) {
                 for(let button of buttons) {
@@ -352,17 +362,21 @@ class InputNumber{
     };
 
     listenerForNewGame() {
+        let tds = document.querySelectorAll('td')
         let newGameBtn = document.querySelector('.sudoku__button');
         newGameBtn.addEventListener('click', function() {
+            for(let elem of tds) {
+                elem.classList.remove('illumination')
+            }
             let activeLevel = document.querySelector('.active');
             let answer = confirm('do you want to start a new game?');
             if(answer) {
                 NumError.textContent = '0';
-                TechnicalFunc.gameRestart(activeLevel.textContent.toLowerCase());
+                // TechnicalFunc.gameRestart();
 
                 let field = document.querySelector('.preloader');
                 field.classList.remove('preloader__not-active');
-                Sudoku.createFullGameField();
+                Sudoku.createFullGameField(activeLevel.textContent.toLowerCase());
             };
 
         });
