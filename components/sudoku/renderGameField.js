@@ -14,12 +14,6 @@ class RenderGameField {
         }
         gameField.append(table)
     }
-
-    // globalVariable() {
-    //     let trs = document.querySelectorAll('tr');
-    //     let tds = document.querySelectorAll('td');
-    //     return {trs, tds};
-    // }
 }
 
 export default new RenderGameField()
