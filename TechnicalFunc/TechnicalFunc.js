@@ -35,14 +35,12 @@ class TechnicalFunc {
         NumError.textContent = '0'; // обнуление счетчика ошибок
         minutes.textContent = '00' // обнуление счетчика минут
         seconds.textContent = '00' // обнуление счетчика секунд
-        field.innerHTML = '' // удаление всего поля // удалить
+        // field.innerHTML = '' // удаление всего поля
         // Sudoku.createFullGameField(); // рендер поля
-        // for(let elem of document.querySelectorAll('.illumination')) {
-        //     elem.classList.remove('illumination')
-        // }
-        RenderGameField.renderGameField(9,9,'.sudoku__field'); // удалить
-        Sudoku.addSimpleField() //  удалить
-        Sudoku.addMarkup(); // рендер разметки //  удалить
+        for(let elem of document.querySelectorAll('.illumination')) {
+            elem.classList.remove('illumination')
+        }
+        // Sudoku.addMarkup(); // рендер разметки
         InputNumber.gameLevel(level); // установка прошлого уровня для игрока 
         document.querySelector('.sudoku__numpad').setAttribute('data-playing', 'false') // подготовка numpad к следующей игре
     }
