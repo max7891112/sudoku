@@ -1,6 +1,22 @@
 import TechnicalFunc from "../../TechnicalFunc/TechnicalFunc";
 
 class Sudoku {
+
+    addSimpleField() {
+        let tds = document.querySelectorAll('td');
+        function firstRow() {
+            let arr = [1,2,3,4,5,6,7,8,9]
+            for(let i = 0; i <= 81; i++) {
+                let randomNum = TechnicalFunc.random(arr.length - 1);
+                if(tds[i]) {
+                    tds[i].firstElementChild.textContent = arr[randomNum];
+                }
+                
+                // arr.splice(randomNum, 1);
+            };  
+        }
+        firstRow()
+    };
     
     addMarkup() {
         let trs = document.querySelectorAll('tr');
