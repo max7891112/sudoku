@@ -36,7 +36,7 @@ class TechnicalFunc {
         minutes.textContent = '00' // обнуление счетчика минут
         seconds.textContent = '00' // обнуление счетчика секунд
         // field.innerHTML = '' // удаление всего поля
-        Sudoku.createFullGameField(); // рендер поля
+        // Sudoku.createFullGameField(); // рендер поля
         for(let elem of document.querySelectorAll('.illumination')) {
             elem.classList.remove('illumination')
         }

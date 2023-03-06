@@ -1,4 +1,5 @@
-import TechnicalFunc from "../../TechnicalFunc/TechnicalFunc.js"
+import TechnicalFunc from "../../TechnicalFunc/TechnicalFunc.js";
+import Sudoku from "../sudoku/Sudoku.js";
 
 class InputNumber{
 
@@ -123,6 +124,10 @@ class InputNumber{
                 NumError.textContent = '0';
                 TechnicalFunc.gameRestart('easy');
                 easy.classList.add('active');
+
+                let field = document.querySelector('.preloader');
+                field.classList.remove('preloader__not-active');
+                Sudoku.createFullGameField();
             }
         })
 
@@ -135,6 +140,10 @@ class InputNumber{
                 NumError.textContent = '0';
                 TechnicalFunc.gameRestart('medium');
                 medium.classList.add('active');
+
+                let field = document.querySelector('.preloader');
+                field.classList.remove('preloader__not-active');
+                Sudoku.createFullGameField();
             }
         })
 
@@ -147,8 +156,17 @@ class InputNumber{
                 NumError.textContent = '0';
                 TechnicalFunc.gameRestart('hard');
                 hard.classList.add('active');
+
+                let field = document.querySelector('.preloader');
+                field.classList.remove('preloader__not-active');
+                Sudoku.createFullGameField();
             };
         });
+    };
+
+    addPreloaderForField () {
+        let field = document.querySelector('.preloader');
+        field.classList.remove('preloader__not-active');
     };
 
     listenerForNewGame() {
@@ -158,10 +176,16 @@ class InputNumber{
             let answer = confirm('do you want to start a new game?')
             if(answer) {
                 NumError.textContent = '0';
-                TechnicalFunc.gameRestart(activeLevel.textContent.toLowerCase())
-            }
+                TechnicalFunc.gameRestart(activeLevel.textContent.toLowerCase());
+
+                let field = document.querySelector('.preloader');
+                field.classList.remove('preloader__not-active');
+                Sudoku.createFullGameField();
+            };
+
         });
     };
+
 };
 
 export default new InputNumber();
