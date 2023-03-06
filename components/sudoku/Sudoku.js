@@ -1,7 +1,7 @@
 import TechnicalFunc from "../../TechnicalFunc/TechnicalFunc";
 
 class Sudoku {
-    
+
     addMarkup() {
         let trs = document.querySelectorAll('tr');
         let tds = document.querySelectorAll('td');
@@ -18,8 +18,6 @@ class Sudoku {
     addBaseField() {
         let tds = document.querySelectorAll('td');
         let trs = document.querySelectorAll('tr');
-        console.log(tds);
-        let currentNum = 0; // текущий номер заполняемой ячейки
         let arrColumnOne = []; // цифры, содрежащиеся в столбце
         let arrColumnTwo = [];
         let arrColumnThree = [];
@@ -30,90 +28,37 @@ class Sudoku {
         let arrColumnEight = [];
         let arrColumnNine = [];
 
+        let currentStackNumber = 0;
+
+
         let arr = [1,2,3,4,5,6,7,8,9];
 
         function fillField (currentNumFunc) {
+
+
             let currentNum = currentNumFunc;
             for(let i = 1; i < 28; i++) {
                 currentNum++;
                 let randomNum = getRandomNum();
 
                 function getRandomNum () {
+                    currentStackNumber++;
+
+                    if(currentStackNumber > 40) throw new Error('-_-');
+                    
+
                     let randomNum = TechnicalFunc.random(arr.length - 1);
                     
 
-                    if(currentNum%9 == 1 ) {
-                        if (arrColumnOne.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 1,
-                            arr: ${trs[0].textContent},
-                            randomNum: ${randomNum},
-                        `);
-                    };
-                    if(currentNum%9 == 2 )  {
-                        if (arrColumnTwo.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 2,
-                            arr: ${trs[1].textContent},
-                            currentNum: ${randomNum},
-                        `);
-                    };
-                    if(currentNum%9 == 3 )  {
-                        if (arrColumnThree.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 3,
-                            arr: ${trs[2].textContent},
-                            currentNum: ${randomNum},
-                        `);
-                    };
-                    if(currentNum%9 == 4 )  {
-                        if (arrColumnFour.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 4,
-                            arr: ${trs[3].textContent},
-                            currentNum: ${randomNum},
-                        `);
-                    };
-                    if(currentNum%9 == 5 )  {
-                        if (arrColumnFive.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 5,
-                            arr: ${trs[4].textContent},
-                            currentNum: ${randomNum},
-                        `);
-                    };
-                    if(currentNum%9 == 6 )  {
-                        if (arrColumnSix.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 6,
-                            arr: ${trs[5].textContent},
-                            currentNum: ${randomNum},
-                        `);
-                    };
-                    if(currentNum%9 == 7 )  {
-                        if (arrColumnSeven.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 7,
-                            arr: ${trs[6].textContent},
-                            currentNum: ${randomNum},
-                        `);
-                    };
-                    if(currentNum%9 == 8 )  {
-                        if (arrColumnEight.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 8,
-                            arr: ${trs[7].textContent},
-                            currentNum: ${randomNum},
-                        `);
-                    };
-                    if(currentNum%9 == 0 )  {
-                        if (arrColumnNine.includes(arr[randomNum])) return getRandomNum();
-                        console.log(`
-                            numberStr: 9,
-                            arr: ${trs[8].textContent},
-                            currentNum: ${randomNum},
-                        `);
-                    };
+                    if(currentNum%9 == 1 && arrColumnOne.includes(arr[randomNum])) return getRandomNum();
+                    if(currentNum%9 == 2 && arrColumnTwo.includes(arr[randomNum])) return getRandomNum();
+                    if(currentNum%9 == 3 && arrColumnThree.includes(arr[randomNum])) return getRandomNum();
+                    if(currentNum%9 == 4 && arrColumnFour.includes(arr[randomNum])) return getRandomNum();
+                    if(currentNum%9 == 5 && arrColumnFive.includes(arr[randomNum])) return getRandomNum();
+                    if(currentNum%9 == 6 && arrColumnSix.includes(arr[randomNum])) return getRandomNum();
+                    if(currentNum%9 == 7 && arrColumnSeven.includes(arr[randomNum])) return getRandomNum();
+                    if(currentNum%9 == 8 && arrColumnEight.includes(arr[randomNum])) return getRandomNum(); 
+                    if(currentNum%9 == 0 && arrColumnNine.includes(arr[randomNum])) return getRandomNum();
 
                     if( currentNum >= 1 && currentNum  <=  9 && trs[0].textContent.includes(`${arr[randomNum]}`) ) return getRandomNum();
                     if( currentNum >= 10 && currentNum <= 18 && trs[1].textContent.includes(`${arr[randomNum]}`) ) return getRandomNum();
@@ -128,8 +73,7 @@ class Sudoku {
                     return randomNum;
                 };
 
-                console.log(randomNum);
-                console.log('ПРОВЕРКА');
+                currentStackNumber = 0;
 
                 if(currentNum%9 == 1 )  arrColumnOne.push(arr[randomNum]);
                 if(currentNum%9 == 2 )  arrColumnTwo.push(arr[randomNum]);
@@ -147,6 +91,7 @@ class Sudoku {
                 if(currentNum%3 == 0) currentNum += 6;
                 if(arr.length == 0) arr = [1,2,3,4,5,6,7,8,9];
 
+                
             };
         };
         fillField(0);
@@ -177,7 +122,7 @@ class Sudoku {
 
     deletePreloader() {
         document.querySelector('.preloader').classList.add('preloader__not-active');
-    }
+    };
 };
 
 export default new Sudoku();
