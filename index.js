@@ -8,8 +8,3 @@ InputNumber.listenerForNumpad();
 InputNumber.listenerForTd();
 InputNumber.listenerForLevelButtons();
 InputNumber.listenerForNewGame();
-
-
-// Sudoku.addMarkup();
-// Sudoku.addBaseField();
-// Sudoku.addSimpleField()
