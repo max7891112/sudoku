@@ -304,12 +304,12 @@ class InputNumber{
                     button.classList.remove('active');
                 }
                 NumError.textContent = '0';
-                TechnicalFunc.gameRestart('easy');
+                // TechnicalFunc.gameRestart('easy');
                 easy.classList.add('active');
 
                 let field = document.querySelector('.preloader');
                 field.classList.remove('preloader__not-active');
-                Sudoku.createFullGameField();
+                Sudoku.createFullGameField('medium');
             }
         })
 
@@ -320,12 +320,12 @@ class InputNumber{
                     button.classList.remove('active');
                 }
                 NumError.textContent = '0';
-                TechnicalFunc.gameRestart('medium');
+                // TechnicalFunc.gameRestart('medium');
                 medium.classList.add('active');
 
                 let field = document.querySelector('.preloader');
                 field.classList.remove('preloader__not-active');
-                Sudoku.createFullGameField();
+                Sudoku.createFullGameField('medium');
             }
         })
 
@@ -336,12 +336,12 @@ class InputNumber{
                     button.classList.remove('active');
                 }
                 NumError.textContent = '0';
-                TechnicalFunc.gameRestart('hard');
+                // TechnicalFunc.gameRestart('hard');
                 hard.classList.add('active');
 
                 let field = document.querySelector('.preloader');
                 field.classList.remove('preloader__not-active');
-                Sudoku.createFullGameField();
+                Sudoku.createFullGameField('hard');
             };
         });
     };

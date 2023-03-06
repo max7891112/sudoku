@@ -1,22 +1,22 @@
 import TechnicalFunc from "../../TechnicalFunc/TechnicalFunc";
-
+import InputNumber from "../InputNumber/InputNumber";
 class Sudoku {
 
-    addSimpleField() {
-        let tds = document.querySelectorAll('td');
-        function firstRow() {
-            let arr = [1,2,3,4,5,6,7,8,9]
-            for(let i = 0; i <= 81; i++) {
-                let randomNum = TechnicalFunc.random(arr.length - 1);
-                if(tds[i]) {
-                    tds[i].firstElementChild.textContent = arr[randomNum];
-                }
+    // addSimpleField() {
+    //     let tds = document.querySelectorAll('td');
+    //     function firstRow() {
+    //         let arr = [1,2,3,4,5,6,7,8,9]
+    //         for(let i = 0; i <= 81; i++) {
+    //             let randomNum = TechnicalFunc.random(arr.length - 1);
+    //             if(tds[i]) {
+    //                 tds[i].firstElementChild.textContent = arr[randomNum];
+    //             }
                 
-                // arr.splice(randomNum, 1);
-            };  
-        }
-        firstRow()
-    };
+    //             // arr.splice(randomNum, 1);
+    //         };  
+    //     }
+    //     firstRow()
+    // };
     
     addMarkup() {
         let trs = document.querySelectorAll('tr');
@@ -34,7 +34,7 @@ class Sudoku {
     addBaseField() {
         let tds = document.querySelectorAll('td');
         let trs = document.querySelectorAll('tr');
-        console.log(tds);
+        // console.log(tds);
         let currentNum = 0; // текущий номер заполняемой ячейки
         let arrColumnOne = []; // цифры, содрежащиеся в столбце
         let arrColumnTwo = [];
@@ -60,75 +60,75 @@ class Sudoku {
 
                     if(currentNum%9 == 1 ) {
                         if (arrColumnOne.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 1,
-                            arr: ${trs[0].textContent},
-                            randomNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 1,
+                        //     arr: ${trs[0].textContent},
+                        //     randomNum: ${randomNum},
+                        // `);
                     };
                     if(currentNum%9 == 2 )  {
                         if (arrColumnTwo.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 2,
-                            arr: ${trs[1].textContent},
-                            currentNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 2,
+                        //     arr: ${trs[1].textContent},
+                        //     currentNum: ${randomNum},
+                        // `);
                     };
                     if(currentNum%9 == 3 )  {
                         if (arrColumnThree.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 3,
-                            arr: ${trs[2].textContent},
-                            currentNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 3,
+                        //     arr: ${trs[2].textContent},
+                        //     currentNum: ${randomNum},
+                        // `);
                     };
                     if(currentNum%9 == 4 )  {
                         if (arrColumnFour.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 4,
-                            arr: ${trs[3].textContent},
-                            currentNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 4,
+                        //     arr: ${trs[3].textContent},
+                        //     currentNum: ${randomNum},
+                        // `);
                     };
                     if(currentNum%9 == 5 )  {
                         if (arrColumnFive.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 5,
-                            arr: ${trs[4].textContent},
-                            currentNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 5,
+                        //     arr: ${trs[4].textContent},
+                        //     currentNum: ${randomNum},
+                        // `);
                     };
                     if(currentNum%9 == 6 )  {
                         if (arrColumnSix.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 6,
-                            arr: ${trs[5].textContent},
-                            currentNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 6,
+                        //     arr: ${trs[5].textContent},
+                        //     currentNum: ${randomNum},
+                        // `);
                     };
                     if(currentNum%9 == 7 )  {
                         if (arrColumnSeven.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 7,
-                            arr: ${trs[6].textContent},
-                            currentNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 7,
+                        //     arr: ${trs[6].textContent},
+                        //     currentNum: ${randomNum},
+                        // `);
                     };
                     if(currentNum%9 == 8 )  {
                         if (arrColumnEight.includes(arr[randomNum]) ) return getRandomNum();
-                        console.log(`
-                            numberStr: 8,
-                            arr: ${trs[7].textContent},
-                            currentNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 8,
+                        //     arr: ${trs[7].textContent},
+                        //     currentNum: ${randomNum},
+                        // `);
                     };
                     if(currentNum%9 == 0 )  {
                         if (arrColumnNine.includes(arr[randomNum])) return getRandomNum();
-                        console.log(`
-                            numberStr: 9,
-                            arr: ${trs[8].textContent},
-                            currentNum: ${randomNum},
-                        `);
+                        // console.log(`
+                        //     numberStr: 9,
+                        //     arr: ${trs[8].textContent},
+                        //     currentNum: ${randomNum},
+                        // `);
                     };
 
                     if( currentNum >= 1 && currentNum  <=  9 && trs[0].textContent.includes(`${arr[randomNum]}`) ) return getRandomNum();
@@ -144,8 +144,8 @@ class Sudoku {
                     return randomNum;
                 };
 
-                console.log(randomNum);
-                console.log('ПРОВЕРКА');
+                // console.log(randomNum);
+                // console.log('ПРОВЕРКА');
 
                 if(currentNum%9 == 1 )  arrColumnOne.push(arr[randomNum]);
                 if(currentNum%9 == 2 )  arrColumnTwo.push(arr[randomNum]);
@@ -180,13 +180,14 @@ class Sudoku {
         };
     };
 
-    createFullGameField () {
+    createFullGameField (level) {
         setTimeout(() => {
             try {
                 this.addBaseField();
+                InputNumber.gameLevel(level);
             } catch {
                 this.clearField();
-                this.createFullGameField();
+                this.createFullGameField(level);
             };
         }, 0);
     };

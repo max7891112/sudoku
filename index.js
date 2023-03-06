@@ -3,14 +3,13 @@ import Sudoku from './components/sudoku/Sudoku.js';
 import InputNumber from './components/InputNumber/InputNumber.js';
 RenderGameField.renderGameField(9,9,'.sudoku__field');
 Sudoku.addMarkup();
-// Sudoku.addBaseField();
-Sudoku.addSimpleField()
-InputNumber.gameLevel('easy');
+Sudoku.createFullGameField('easy');
 InputNumber.listenerForNumpad();
 InputNumber.listenerForTd();
-
 InputNumber.listenerForLevelButtons();
 InputNumber.listenerForNewGame();
 
+
 // Sudoku.addMarkup();
-// Sudoku.createFullGameField();
+// Sudoku.addBaseField();
+// Sudoku.addSimpleField()
