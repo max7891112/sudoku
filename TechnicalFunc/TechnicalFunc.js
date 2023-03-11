@@ -6,7 +6,7 @@ class TechnicalFunc {
     constructor() {
         this.timerId = '1';
         this.flag = true;
-        this.stopTimer = false
+        this.stopTimer = false;
     }
 
     random(max) {
@@ -24,25 +24,44 @@ class TechnicalFunc {
         let answer = confirm('game over! Do you want start a new game?')
         if(answer) {
             this.gameRestart(level)
-        } else {
-            
-        }
+        } 
+    }
+
+    gameWinner(level) {
+        let target = document.querySelector('.game-win')
+        target.classList.remove('_hidden')
+        let numpad = document.querySelector('.sudoku__numpad')
+        let transparentBlock = document.createElement('div')
+        transparentBlock.classList.add('_transparent-block')
+        numpad.append(transparentBlock)
+        gameWinLevel.textContent = level
+        gameWinTime.textContent = minutes.textContent + ':' + seconds.textContent
+        clearInterval(this.timerId)
     }
 
     gameRestart(level) {
-        let field = document.querySelector('.sudoku__field') // удалить
+        // let field = document.querySelector('.sudoku__field') // удалить
         clearInterval(this.timerId)
         NumError.textContent = '0'; // обнуление счетчика ошибок
         minutes.textContent = '00' // обнуление счетчика минут
         seconds.textContent = '00' // обнуление счетчика секунд
         // field.innerHTML = '' // удаление всего поля
-        // Sudoku.createFullGameField(); // рендер поля
+        Sudoku.createFullGameField(level); // рендер поля
         for(let elem of document.querySelectorAll('.illumination')) {
             elem.classList.remove('illumination')
         }
         // Sudoku.addMarkup(); // рендер разметки
         InputNumber.gameLevel(level); // установка прошлого уровня для игрока 
         document.querySelector('.sudoku__numpad').setAttribute('data-playing', 'false') // подготовка numpad к следующей игре
+        
+        let target = document.querySelector('.game-win')
+        let transparentBlock = document.querySelector('._transparent-block')
+        if(target) {
+            target.classList.add('_hidden')
+            if(transparentBlock) {
+                transparentBlock.parentNode.lastElementChild.remove()
+            }
+        } 
     }
 
     addTimer() {

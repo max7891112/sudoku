@@ -1,5 +1,4 @@
 import TechnicalFunc from "../../TechnicalFunc/TechnicalFunc.js";
-import Sudoku from "../sudoku/Sudoku.js";
 
 class InputNumber{
 
@@ -26,7 +25,7 @@ class InputNumber{
 
     gameLevel(level) {
         if(level == 'easy') {
-            this.fillRandomEmptyCell(50);
+            this.fillRandomEmptyCell(3);
         };
 
         if(level == 'medium') {
@@ -233,9 +232,26 @@ class InputNumber{
     listenerForNumpad() {
         
         let numpadListener = '';
+        
         for(let numpad of this.numpads) {
             numpad.addEventListener('click',numpadListener = () => {
                 this.checkNumber(numpad.firstElementChild.textContent)
+                let tds = document.querySelectorAll('td')
+                for(let td of tds) {
+                    if(td.firstElementChild.firstElementChild) {
+                        if(!td.firstElementChild.firstElementChild.classList.contains('error') && 
+                            td.firstElementChild.firstElementChild.firstElementChild.textContent != '' &&
+                            +NumError.textContent < 3
+                        ) {
+                            continue
+                        } else {
+                            return
+                        }
+                    }
+                }
+                let level = document.querySelector('.active')
+                level = level.textContent
+                TechnicalFunc.gameWinner(level)
             });
         };
         document.addEventListener('keydown', (event) => {
@@ -286,7 +302,7 @@ class InputNumber{
                 +NumError.textContent++; // получена по id
             if(NumError.textContent == '3') {
                 let activeLevel = document.querySelector('.active');
-            TechnicalFunc.gameOver(activeLevel.textContent.toLowerCase());
+                TechnicalFunc.gameOver(activeLevel.textContent.toLowerCase());
                 };
             };
         };
@@ -307,13 +323,11 @@ class InputNumber{
                 for(let button of buttons) {
                     button.classList.remove('active');
                 }
-                NumError.textContent = '0';
-                // TechnicalFunc.gameRestart('easy');
                 easy.classList.add('active');
 
                 let field = document.querySelector('.preloader');
                 field.classList.remove('preloader__not-active');
-                Sudoku.createFullGameField('medium');
+                TechnicalFunc.gameRestart('easy')
             }
         })
 
@@ -326,13 +340,11 @@ class InputNumber{
                 for(let button of buttons) {
                     button.classList.remove('active');
                 }
-                NumError.textContent = '0';
-                // TechnicalFunc.gameRestart('medium');
                 medium.classList.add('active');
 
                 let field = document.querySelector('.preloader');
                 field.classList.remove('preloader__not-active');
-                Sudoku.createFullGameField('medium');
+                TechnicalFunc.gameRestart('medium')
             }
         })
 
@@ -345,13 +357,11 @@ class InputNumber{
                 for(let button of buttons) {
                     button.classList.remove('active');
                 }
-                NumError.textContent = '0';
-                // TechnicalFunc.gameRestart('hard');
                 hard.classList.add('active');
 
                 let field = document.querySelector('.preloader');
                 field.classList.remove('preloader__not-active');
-                Sudoku.createFullGameField('hard');
+                TechnicalFunc.gameRestart('hard')
             };
         });
     };
@@ -361,7 +371,7 @@ class InputNumber{
         field.classList.remove('preloader__not-active');
     };
 
-    listenerForNewGame() {
+    listenerForNewGame(level) {
         let tds = document.querySelectorAll('td')
         let newGameBtn = document.querySelector('.sudoku__button');
         newGameBtn.addEventListener('click', function() {
@@ -371,12 +381,11 @@ class InputNumber{
             let activeLevel = document.querySelector('.active');
             let answer = confirm('do you want to start a new game?');
             if(answer) {
-                NumError.textContent = '0';
-                // TechnicalFunc.gameRestart();
 
                 let field = document.querySelector('.preloader');
                 field.classList.remove('preloader__not-active');
-                Sudoku.createFullGameField(activeLevel.textContent.toLowerCase());
+
+                TechnicalFunc.gameRestart(activeLevel.textContent.toLowerCase())
             };
 
         });
