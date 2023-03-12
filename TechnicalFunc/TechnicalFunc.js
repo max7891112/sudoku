@@ -69,25 +69,25 @@ class TechnicalFunc {
         let counterForMinutes = 0
         this.timerId = setInterval(() => {
             if(this.stopTimer) return
+            counterForSeconds++
             if(counterForSeconds < 10) {
-                let time = '0' + counterForSeconds
-                seconds.textContent = time
-                counterForSeconds++
+                seconds.textContent = '0' + counterForSeconds
+            } else {
+                if(counterForSeconds == 60) {
+                    counterForMinutes++
+                    counterForSeconds = 0
+                    seconds.textContent = '0' + counterForSeconds
+                } else {
+                    seconds.textContent = counterForSeconds
+                }
+                
             }
-            if(counterForSeconds < 60 & counterForSeconds >= 10) {
-                seconds.textContent = counterForSeconds
-                counterForSeconds++
-            }
-            if(counterForSeconds == 59) {
-                counterForMinutes++
                 if(counterForMinutes < 10) {
                     minutes.textContent = '0' + counterForMinutes
                 } else {
                     minutes.textContent = counterForMinutes
-                }
-                counterForSeconds = 0
-            }
-        },1000)
+                } 
+        },300)
     }
 
     pause() {

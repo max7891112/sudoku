@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "build parcel build index.html --no-source-maps --no-cash --no-minify --public url ."
+    "build": "parcel build index.html --no-source-maps --no-minify --public-url ."
   },
   "author": "",
   "license": "ISC",

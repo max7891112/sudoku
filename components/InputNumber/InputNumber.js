@@ -255,32 +255,42 @@ class InputNumber{
             });
         };
         document.addEventListener('keydown', (event) => {
+            let level = document.querySelector('.active')
+            level = level.textContent
             if(event.code == 'Digit1' || event.code == 'Numpad1') {
                 this.checkNumber(1)
+                TechnicalFunc.gameWinner(level)
             }
             if(event.code == 'Digit2' || event.code == 'Numpad2') {
                 this.checkNumber(2)
+                TechnicalFunc.gameWinner(level)
             }
             if(event.code == 'Digit3' || event.code == 'Numpad3') {
                 this.checkNumber(3)
+                TechnicalFunc.gameWinner(level)
             }
             if(event.code == 'Digit4' || event.code == 'Numpad4') {
                 this.checkNumber(4)
+                TechnicalFunc.gameWinner(level)
             }
             if(event.code == 'Digit5' || event.code == 'Numpad5') {
                 this.checkNumber(5)
+                TechnicalFunc.gameWinner(level)
             }
             if(event.code == 'Digit6' || event.code == 'Numpad6') {
                 this.checkNumber(6)
+                TechnicalFunc.gameWinner(level)
             }
             if(event.code == 'Digit7' || event.code == 'Numpad7') {
                 this.checkNumber(7)
             }
             if(event.code == 'Digit8' || event.code == 'Numpad8') {
                 this.checkNumber(8)
+                TechnicalFunc.gameWinner(level)
             }
             if(event.code == 'Digit9' || event.code == 'Numpad9') {
                 this.checkNumber(9)
+                TechnicalFunc.gameWinner(level)
             }
 
         })
