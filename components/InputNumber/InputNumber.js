@@ -319,61 +319,70 @@ class InputNumber{
     }
 
     listenerForLevelButtons() {
-        let easy = document.getElementById('levelEasy');
-        let medium = document.getElementById('levelMedium');
-        let hard = document.getElementById('levelHard');
-        let buttons = document.querySelectorAll('.sudoku__level-button');
+        let easy = document.querySelectorAll('[data-level="easy"]')
+        let medium = document.querySelectorAll('[data-level="medium"]')
+        let hard = document.querySelectorAll('[data-level="hard"]')
+        let buttons = document.querySelectorAll('[data-level]');
+        console.log(buttons)
         let tds = document.querySelectorAll('td')
-        easy.addEventListener('click', () => {
-            for(let elem of tds) {
-                elem.classList.remove('illumination')
-            }
-            let answer = confirm('the progress of the current game will be lost');
-            if(answer) {
-                for(let button of buttons) {
-                    button.classList.remove('active');
+        for(let button of easy) {
+            button.addEventListener('click', () => {
+                for(let elem of tds) {
+                    elem.classList.remove('illumination')
                 }
-                easy.classList.add('active');
-
-                let field = document.querySelector('.preloader');
-                field.classList.remove('preloader__not-active');
-                TechnicalFunc.gameRestart('easy')
-            }
-        })
-
-        medium.addEventListener('click', function() {
-            for(let elem of tds) {
-                elem.classList.remove('illumination')
-            }
-            let answer = confirm('the progress of the current game will be lost');
-            if(answer) {
-                for(let button of buttons) {
-                    button.classList.remove('active');
+                let answer = confirm('the progress of the current game will be lost');
+                if(answer) {
+                    for(let button of buttons) {
+                        button.classList.remove('active');
+                    }
+                    buttons[0].classList.add('active');
+                    buttons[3].classList.add('active');
+                    
+                    let field = document.querySelector('.preloader');
+                    field.classList.remove('preloader__not-active');
+                    TechnicalFunc.gameRestart('easy')
                 }
-                medium.classList.add('active');
-
-                let field = document.querySelector('.preloader');
-                field.classList.remove('preloader__not-active');
-                TechnicalFunc.gameRestart('medium')
-            }
-        })
-
-        hard.addEventListener('click', function() {
-            for(let elem of tds) {
-                elem.classList.remove('illumination')
-            }
-            let answer = confirm('the progress of the current game will be lost');
-            if(answer) {
-                for(let button of buttons) {
-                    button.classList.remove('active');
+            })
+        }
+        for(let button of medium) {
+            button.addEventListener('click', function() {
+                for(let elem of tds) {
+                    elem.classList.remove('illumination')
                 }
-                hard.classList.add('active');
-
-                let field = document.querySelector('.preloader');
-                field.classList.remove('preloader__not-active');
-                TechnicalFunc.gameRestart('hard')
-            };
-        });
+                let answer = confirm('the progress of the current game will be lost');
+                if(answer) {
+                    for(let button of buttons) {
+                        button.classList.remove('active');
+                    }
+                    buttons[1].classList.add('active');
+                    buttons[4].classList.add('active');
+    
+                    let field = document.querySelector('.preloader');
+                    field.classList.remove('preloader__not-active');
+                    TechnicalFunc.gameRestart('medium')
+                }
+            })
+        }
+        
+        for(let button of hard) {
+            button.addEventListener('click', function() {
+                for(let elem of tds) {
+                    elem.classList.remove('illumination')
+                }
+                let answer = confirm('the progress of the current game will be lost');
+                if(answer) {
+                    for(let button of buttons) {
+                        button.classList.remove('active');
+                    }
+                    buttons[2].classList.add('active');
+                    buttons[5].classList.add('active');
+    
+                    let field = document.querySelector('.preloader');
+                    field.classList.remove('preloader__not-active');
+                    TechnicalFunc.gameRestart('hard')
+                };
+            });
+        }
     };
 
     addPreloaderForField () {

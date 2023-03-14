@@ -7,7 +7,7 @@
 	color: #6e7c8c;
 }
 .sudoku {
-	
+	padding: 0 10px;
 		&__header{
 			display: flex;
 			margin: 100px 0 40px 0;
@@ -57,7 +57,8 @@
 		}
 
 		&__timer-pause{
-
+			display: flex;
+			align-items: center;
 		}
 
 		&__game {
@@ -87,6 +88,56 @@
 			width: 25%;
 			display: flex;
 			flex-direction: column;
+		}
+
+		&__level-container{
+			display: inline;
+			@media (max-width:550px) {
+				display: block;
+				position: relative;
+				cursor: pointer;
+				&:hover{
+					.sudoku__level-li{
+						@media (max-width:550px) {
+							display: block;
+						}
+					}
+				}
+			}
+			ul{
+				display: none;
+				@media (max-width:550px) {
+					padding-top: 27px;
+					display: block;
+					position: absolute;
+					z-index: 1000;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+
+		&__level-li{
+			display: none;
+			@media (max-width:550px) {
+				display: none;
+			}
+		}
+		
+		&__level-button_550px{
+			display: none;
+			@media (max-width:550px) {
+				display: block;
+				padding: 10px;
+				width: 100%;
+				font-size: 15px;
+				color: black;
+				background-color: #f3f3f3;
+				
+				&:hover{
+					background-color: #6e7c8c;
+				}
+			}
 		}
 
 		&__numpad {
@@ -285,7 +336,6 @@
 	z-index: 1000;
 	top: 0;
 	left: 0;
-	// background-color: red;
 }
 
 
@@ -325,3 +375,23 @@
 		font-size: 25px;
 	}
 }
+
+@media (max-width:550px) {
+	.sudoku__level-button{
+		display: none;
+	}
+	.sudoku__numpad-item{
+		margin: 1px;
+		padding: 7px 10px;
+	}
+	.sudoku__field{
+		td{
+			width: 30px;
+			height: 30px;
+		}
+	}
+
+	.sudoku__level{
+		margin-right: 0;
+	}
+} 

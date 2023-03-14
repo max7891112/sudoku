@@ -13,10 +13,16 @@
         <div class="sudoku">
             <div class="sudoku__header">
                 <div class="sudoku__level">
-                    <span>Level:</span>
-                    <button class="sudoku__level-button active" id="levelEasy">Easy</button>
-                    <button class="sudoku__level-button" id="levelMedium">Medium</button>
-                    <button class="sudoku__level-button" id="levelHard">Hard</button>
+                    <div class="sudoku__level-container">Level:
+                        <ul>
+                            <li class="sudoku__level-li"><button class="sudoku__level-button_550px active" data-level="easy">Easy</button></li>
+                            <li class="sudoku__level-li"><button class="sudoku__level-button_550px" data-level="medium">Medium</button></li>
+                            <li class="sudoku__level-li"><button class="sudoku__level-button_550px" data-level="hard">Hard</button></li>
+                        </ul>
+                    </div>
+                    <button class="sudoku__level-button active" data-level="easy">Easy</button>
+                    <button class="sudoku__level-button" data-level="medium">Medium</button>
+                    <button class="sudoku__level-button" data-level="hard">Hard</button>
                 </div>
                 <div class="sudoku__error"><span>Error:</span> <span id="NumError">0</span>/3</div>
                 <div class="sudoku__timer">
