@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/sudoku/assets/sudoku-CCaAuxpe.png">
+    <title>Sudoku</title>
+  <script type="module" crossorigin src="/sudoku/assets/index-D5dsNwVJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/sudoku/assets/index-CmCxi9Gf.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sudoku">
+            <div class="sudoku__header">
+                <div class="sudoku__level">
+                    <span>Level:</span>
+                    <button class="sudoku__level-button active" id="levelEasy">Easy</button>
+                    <button class="sudoku__level-button" id="levelMedium">Medium</button>
+                    <button class="sudoku__level-button" id="levelHard">Hard</button>
+                </div>
+                <div class="sudoku__error"><span>Error:</span> <span id="NumError">0</span>/3</div>
+                <div class="sudoku__timer">
+                    <span class="sudoku__time"><span id="minutes">00</span>:<span id="seconds">00</span></span>
+                    <div class="sudoku__timer-play _hidden" id="play">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAdiAAAHYgE4epnbAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAHJQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwopa3AAAACV0Uk5TAAYHCQ0RFhctN0BJVH2QlpiZmp6lt7jBxMjY2t/i5evw8vP8/gDw1SUAAADISURBVDjLhZPZFsIgDESndaGKtbiCYtWi+f9f9EGkQPFk3giXkMAECKql0tY5q5WsMZXoBgoaOpFtV62jRK6tkuOGJjJRkqangvomnC/uE/U+R2Xoj8y3jva3fh5eGdECgAj1n7G6Zr0IAB2NAGbbd0J0QD3EALC+xcBQQ1IKYL6PCQk1Lk6+bXkfYwo6zwBgcQwxDVsAgM3DxyxcEcDy4hvlAfYKtki2Tfah2KdmP4v/7sgwu6JheMuxpuVtzw8OP3r88P4f/w/ZBGDdh/4oqAAAAABJRU5ErkJggg==" alt="play">
+                    </div>
+                    <div class="sudoku__timer-pause" id="pause">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAB3SURBVFiF7Zc7DoAgEAVHC86O5/Bs4DGw0MJs2PAJdm+SrchshnJB1AnAAWSgfCYB8X1f4bhEs8ROXOS42F/YuRY5bE5A6Yi07ozD3iH9igIUoAAFKEABClCAAhTgBeSGlxY5bsDZWFZ7n3FcAs8lkxg7zUYdwQ27Y0GAstGjCQAAAABJRU5ErkJggg==" alt="pause">
+                    </div>
+                </div>
+            </div>
+            <div class="sudoku__game">
+                <div class="sudoku__field"></div>
+                <div class="sudoku__additional-elements">
+                    <div class="sudoku__numpad" data-playing="false">
+                        <div class="sudoku__numpad-item"><span>1</span></div>
+                        <div class="sudoku__numpad-item"><span>2</span></div>
+                        <div class="sudoku__numpad-item"><span>3</span></div>
+                        <div class="sudoku__numpad-item"><span>4</span></div>
+                        <div class="sudoku__numpad-item"><span>5</span></div>
+                        <div class="sudoku__numpad-item"><span>6</span></div>
+                        <div class="sudoku__numpad-item"><span>7</span></div>
+                        <div class="sudoku__numpad-item"><span>8</span></div>
+                        <div class="sudoku__numpad-item"><span>9</span></div>
+                        <button class="sudoku__button">New game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
